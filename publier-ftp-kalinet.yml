@@ -1,0 +1,75 @@
+# Publication automatique du site.
+#
+# Déclenché à chaque fois que quelqu'un enregistre une modification depuis /admin
+# (le CMS écrit dans ce dépôt, ce qui déclenche ce script).
+#
+# Trois secrets à créer dans GitHub › Settings › Secrets and variables › Actions :
+#   FTP_HOST  — l'adresse FTP donnée par l'hébergeur (ex. ftp.smartbiker-france.fr)
+#   FTP_USER  — l'identifiant FTP
+#   FTP_PASS  — le mot de passe FTP
+# Et une variable (même écran, onglet Variables) :
+#   FTP_DIR   — le dossier sur le serveur (souvent /www ou /public_html)
+
+name: Publier le site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: publication
+  cancel-in-progress: true
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install --quiet pyyaml markdown pillow
+
+      - name: Générer les pages
+        run: python build.py
+
+      - name: Enregistrer les images fabriquées
+        run: |
+          if [ -n "$(git status --porcelain assets/img)" ]; then
+            git config user.name "Publication automatique"
+            git config user.email "noreply@smartbiker-france.fr"
+            git add assets/img
+            git commit -m "Versions optimisées des photos ajoutées"
+            git push
+          fi
+
+      - name: Assembler le dossier à envoyer
+        run: |
+          mkdir -p _site
+          cp *.html robots.txt sitemap.xml _site/
+          cp -r assets admin _site/
+          echo "Fichiers prêts : $(find _site -type f | wc -l)"
+
+      - name: Envoyer sur l'hébergement
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+          FTP_DIR: ${{ vars.FTP_DIR }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set net:max-retries 3;
+            set net:timeout 20;
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"$FTP_HOST\";
+            mirror -R --verbose --parallel=4 --exclude-glob .DS_Store ./_site/ \"${FTP_DIR:-/}\";
+          "

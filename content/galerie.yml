@@ -1,0 +1,152 @@
+# La galerie. Pour ajouter une photo : « Ajouter » en bas de la liste,
+# choisir le fichier, écrire la description (lue par Google) et la légende.
+
+meta:
+  titre: Remorque porte-moto abaissable en photos | SMART BIKER France
+  description: 'Photos de la remorque porte-moto abaissable SMART BIKER : mécanisme d''abaissement, chargement sans rampe,
+    rangement vertical, quatre coloris et options d''arrimage.'
+kicker: Galerie
+titre: La remorque porte-moto abaissable en images
+chapo: Le mécanisme d'abaissement, le bloque-roue, l'attelage, les quatre coloris et le rangement vertical. Toutes les photos
+  sont celles de la SMART BIKER livrée en France. Cliquez pour agrandir.
+titre_video: La démonstration complète
+kicker_video: La vidéo
+titre_produit: La remorque sous tous les angles
+kicker_produit: Le produit
+titre_options: Antivols et arrimage
+kicker_options: Les options
+chapo_options: Les accessoires disponibles à la commande, pour sécuriser la remorque et la moto.
+photos:
+- image: smart-biker-blanche-trois-quarts
+  alt: Remorque porte-moto abaissable SMART BIKER blanche, vue de trois quarts, sur fond blanc
+  legende: Blanche, de trois quarts
+  grande: true
+- image: smart-biker-noire-trois-quarts
+  alt: Remorque porte-moto abaissable SMART BIKER noire, vue de trois quarts, sur fond blanc
+  legende: Noire, de trois quarts
+  grande: true
+- image: smart-biker-noire-plateau-au-sol
+  alt: Remorque porte-moto SMART BIKER noire, plateau abaissé au sol
+  legende: Plateau au sol
+  grande: true
+- image: smart-biker-blanche-plateau-abaisse
+  alt: Remorque porte-moto SMART BIKER blanche, plateau abaissé et bloque-roue avant
+  legende: Le bloque-roue
+  grande: true
+- image: smart-biker-blanche-vue-arriere-studio
+  alt: Remorque porte-moto SMART BIKER blanche vue de l'arrière, sur fond blanc
+  legende: Blanche, de l'arrière
+  grande: true
+- image: smart-biker-noire-vue-arriere
+  alt: Remorque porte-moto SMART BIKER noire vue de l'arrière, plateau et feux
+  legende: Noire, de l'arrière
+  grande: true
+- image: smart-biker-noire-profil
+  alt: Remorque porte-moto SMART BIKER noire vue de profil
+  legende: De profil
+  grande: true
+- image: smart-biker-blanche-pliee
+  alt: Remorque porte-moto SMART BIKER blanche pliée, prête à être dressée
+  legende: Pliée
+  grande: true
+- image: remorque-porte-moto-plateau-pose-au-sol
+  alt: Plateau de la remorque porte-moto SMART BIKER posé au sol derrière une voiture
+  legende: Le plateau au sol
+  grande: true
+- image: charger-sa-moto-seul-remorque-abaissee
+  alt: Un homme charge seul un BMW GS sur la remorque porte-moto abaissée
+  legende: Charger seul, sans rampe
+  grande: true
+- image: bloque-roue-avant-moto-remorque
+  alt: Roue avant d'une BMW GS calée dans le bloque-roue de la remorque
+  legende: La roue calée
+  grande: true
+- image: remorque-porte-moto-chargee-plein-ciel
+  alt: BMW GS sanglé sur la remorque porte-moto SMART BIKER, prêt à partir
+  legende: Prête à partir
+  grande: true
+- image: remorque-porte-moto-attelee-sur-route
+  alt: Remorque porte-moto SMART BIKER attelée et chargée d'un roadster, sur la route
+  legende: Sur la route
+  grande: true
+- image: convoi-remorques-porte-moto-livraison
+  alt: Deux voitures tractant des remorques porte-moto SMART BIKER chargées
+  legende: Deux attelages
+  grande: true
+- image: trois-motos-remorques-porte-moto
+  alt: Trois motos chargées sur des remorques porte-moto SMART BIKER
+  legende: Trois motos, trois remorques
+  grande: true
+- image: moto-chargee-remorque-blanche-atelier
+  alt: Roadster BMW chargé sur une remorque porte-moto SMART BIKER blanche
+  legende: Un roadster
+  grande: true
+- image: roadster-charge-remorque-smart-biker
+  alt: Roadster sanglé sur la remorque porte-moto SMART BIKER
+  legende: Sanglé, prêt
+  grande: true
+- image: mains-sur-le-bloque-roue-remorque
+  alt: Réglage du bloque-roue avant de la remorque porte-moto SMART BIKER
+  legende: Le bloque-roue réglable
+  grande: true
+- image: remorque-porte-moto-grosse-cylindree-trail
+  alt: Gros trail routier chargé sur la remorque porte-moto SMART BIKER
+  legende: Un gros trail
+  grande: true
+- image: remorque-porte-moto-moto-roadster
+  alt: Roadster chargé sur la remorque porte-moto SMART BIKER
+  legende: Un roadster sportif
+  grande: true
+- image: remorque-porte-moto-scooter-3-roues-kit-mp3
+  alt: Scooter à trois roues sur la remorque SMART BIKER avec kit MP3
+  legende: Un scooter 3 roues
+  grande: true
+- image: chargement-moto-custom-remorque-abaissable
+  alt: Chargement d'un custom sur la remorque porte-moto abaissable
+  legende: Un custom
+  grande: false
+- image: smart-biker-coloris-blanc-studio
+  alt: Remorque porte-moto abaissable SMART BIKER blanche sur fond blanc
+  legende: Coloris blanc
+  grande: false
+- image: smart-biker-coloris-noir-studio
+  alt: Remorque porte-moto abaissable SMART BIKER noire sur fond blanc
+  legende: Coloris noir
+  grande: false
+- image: smart-biker-coloris-orange-studio
+  alt: Remorque porte-moto abaissable SMART BIKER orange sur fond blanc
+  legende: Coloris orange
+  grande: false
+- image: smart-biker-coloris-bleu-studio
+  alt: Remorque porte-moto abaissable SMART BIKER bleue sur fond blanc
+  legende: Coloris bleu
+  grande: false
+- image: smart-biker-orange-trois-quarts
+  alt: Remorque porte-moto SMART BIKER orange livrée, vue de trois quarts
+  legende: Une orange livrée
+  grande: false
+- image: smart-biker-coloris-bleu
+  alt: Remorque porte-moto SMART BIKER bleue livrée
+  legende: Une bleue livrée
+  grande: false
+- image: remorques-porte-moto-orange-et-bleue
+  alt: Remorques porte-moto SMART BIKER orange et bleue côte à côte
+  legende: Orange et bleue
+  grande: false
+- image: remorque-porte-moto-pliee-rangement-vertical
+  alt: Remorque porte-moto SMART BIKER pliée et dressée à la verticale
+  legende: Dressée contre un mur
+  grande: false
+options:
+- image: option-antivol-permanent
+  alt: Antivol permanent pour remorque porte-moto
+  legende: Antivol permanent
+- image: option-antivol-de-tete
+  alt: Antivol de tête d'attelage pour remorque porte-moto
+  legende: Antivol de tête
+- image: option-sangles-retractables
+  alt: Sangles rétractables automatiques pour l'arrimage de la moto
+  legende: Sangles rétractables
+- image: option-sangle-roue-arriere
+  alt: Sangle d'arrimage pour la roue arrière de la moto
+  legende: Sangle roue arrière

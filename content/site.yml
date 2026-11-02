@@ -1,0 +1,58 @@
+# Réglages du site. Tout ce qui est ici est repris automatiquement
+# partout où ça apparaît, y compris dans ce que lit Google.
+
+prix: "1 990"
+livraison: "200"
+
+telephone: "05 87 14 03 34"
+telephone_lien: "+33587140334"
+email: "contact@smartbiker-france.fr"
+
+entreprise: "REMORQU &amp; CO"
+adresse: "28 rue Nicolas Appert"
+code_postal: "87280"
+ville: "Limoges"
+site_partenaire: "https://remorqueco.fr"
+
+baseline: "Le transport moto réinventé&#8239;!"
+
+agences:
+  - ville: "Limoges"
+    departement: "Haute-Vienne (87)"
+    adresse: "28 rue Nicolas Appert, 87280 Limoges"
+  - ville: "La Souterraine"
+    departement: "Creuse (23)"
+    adresse: "Agence REMORQU &amp; CO"
+  - ville: "Angoulême"
+    departement: "Charente (16)"
+    adresse: "Agence REMORQU &amp; CO"
+
+coloris:
+  - nom: "Blanc"
+    couleur: "#f4f4f4"
+  - nom: "Noir"
+    couleur: "#1d1d1f"
+  - nom: "Orange"
+    couleur: "#ed6a06"
+  - nom: "Bleu"
+    couleur: "#1c7fc4"
+
+menu:
+  - texte: "Accueil"
+    lien: "index.html"
+  - texte: "Chargement"
+    lien: "index.html#chargement"
+  - texte: "Rangement"
+    lien: "index.html#rangement"
+  - texte: "Coloris"
+    lien: "index.html#coloris"
+  - texte: "Technique"
+    lien: "index.html#technique"
+  - texte: "Prix"
+    lien: "index.html#prix"
+  - texte: "Galerie"
+    lien: "galerie.html"
+  - texte: "Conseils"
+    lien: "conseils.html"
+  - texte: "Devis"
+    lien: "devis.html"

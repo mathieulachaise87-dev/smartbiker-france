@@ -1,0 +1,469 @@
+# ===========================================================================
+#  Back-office du site SMART BIKER France
+#
+#  Les deux lignes marquées « À REMPLIR » sont les seules à compléter une fois
+#  le dépôt GitHub et le compte DecapBridge créés.
+# ===========================================================================
+
+# Mode local : quand le site tourne sur votre ordinateur (localhost), le CMS
+# écrit directement dans les fichiers du dossier, sans compte et sans Internet.
+# Sur le vrai site, cette ligne est ignorée et la connexion normale s'applique.
+local_backend: true
+
+backend:
+  name: git-gateway
+  repo: VOTRE-COMPTE/smartbiker-france        # À REMPLIR
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/VOTRE-ID-DECAPBRIDGE   # À REMPLIR
+  gateway_url: https://gateway.decapbridge.com
+  commit_messages:
+    create: 'Ajout {{collection}} "{{slug}}" — {{author-name}}'
+    update: 'Modification {{collection}} "{{slug}}" — {{author-name}}'
+    delete: 'Suppression {{collection}} "{{slug}}" — {{author-name}}'
+    uploadMedia: 'Photo ajoutée "{{path}}" — {{author-name}}'
+    deleteMedia: 'Photo supprimée "{{path}}" — {{author-name}}'
+
+site_url: https://smartbiker-france.fr
+display_url: https://smartbiker-france.fr
+locale: fr
+
+media_folder: "assets/img"
+public_folder: "assets/img"
+
+collections:
+
+  # -------------------------------------------------------------------------
+  - name: reglages
+    label: "Réglages du site"
+    label_singular: "Réglage"
+    description: "Le prix, le téléphone, les agences. Ce qui est ici est repris partout sur le site."
+    files:
+      - name: site
+        label: "Prix, coordonnées, agences, menu"
+        file: "content/site.yml"
+        fields:
+          - { name: prix, label: "Prix public TTC (sans le symbole €)", widget: string, hint: "Exemple : 1 990" }
+          - { name: livraison, label: "Supplément livraison TTC", widget: string }
+          - { name: telephone, label: "Téléphone affiché", widget: string }
+          - { name: telephone_lien, label: "Téléphone au format international", widget: string, hint: "Exemple : +33587140334" }
+          - { name: email, label: "E-mail de contact", widget: string }
+          - { name: entreprise, label: "Raison sociale", widget: string }
+          - { name: adresse, label: "Adresse", widget: string }
+          - { name: code_postal, label: "Code postal", widget: string }
+          - { name: ville, label: "Ville", widget: string }
+          - { name: site_partenaire, label: "Site REMORQU & CO", widget: string, required: false }
+          - { name: baseline, label: "Phrase du bandeau rouge", widget: string }
+          - name: agences
+            label: "Agences de retrait"
+            widget: list
+            label_singular: "Agence"
+            summary: "{{fields.ville}}"
+            fields:
+              - { name: ville, label: "Ville", widget: string }
+              - { name: departement, label: "Département", widget: string }
+              - { name: adresse, label: "Adresse", widget: string }
+          - name: coloris
+            label: "Coloris proposés"
+            widget: list
+            label_singular: "Coloris"
+            summary: "{{fields.nom}}"
+            fields:
+              - { name: nom, label: "Nom", widget: string }
+              - { name: couleur, label: "Couleur", widget: color, allowInput: true }
+          - name: menu
+            label: "Menu du site"
+            widget: list
+            label_singular: "Entrée de menu"
+            summary: "{{fields.texte}}"
+            fields:
+              - { name: texte, label: "Texte", widget: string }
+              - { name: lien, label: "Lien", widget: string }
+
+  # -------------------------------------------------------------------------
+  - name: pages
+    label: "Pages du site"
+    label_singular: "Page"
+    files:
+
+      - name: accueil
+        label: "Accueil"
+        file: "content/accueil.yml"
+        fields:
+          - name: meta
+            label: "Référencement de la page"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre dans Google", widget: string, hint: "60 caractères maximum" }
+              - { name: description, label: "Description dans Google", widget: text, hint: "155 caractères maximum" }
+
+          - name: hero
+            label: "Bandeau d'ouverture (avec la vidéo)"
+            widget: object
+            fields:
+              - { name: kicker, label: "Petite phrase rouge", widget: string }
+              - { name: titre, label: "Grand titre", widget: string, hint: "Mettre un mot entre *étoiles* pour l'afficher en rouge" }
+              - { name: intro, label: "Paragraphe", widget: text, hint: "{prix} affiche le prix. **Gras** entre doubles étoiles." }
+              - { name: bouton, label: "Bouton principal", widget: string }
+              - { name: bouton_lien, label: "Lien du bouton principal", widget: string }
+              - { name: bouton2, label: "Bouton secondaire", widget: string }
+              - { name: bouton2_lien, label: "Lien du bouton secondaire", widget: string }
+              - { name: bouton_film, label: "Bouton du film", widget: string }
+              - { name: bouton_film_duree, label: "Durée affichée", widget: string }
+              - { name: note, label: "Ligne du bas", widget: string }
+
+          - name: chiffres
+            label: "Bandeau de chiffres"
+            widget: list
+            label_singular: "Chiffre"
+            summary: "{{fields.valeur}} {{fields.unite}} — {{fields.libelle}}"
+            fields:
+              - { name: valeur, label: "Valeur", widget: string }
+              - { name: unite, label: "Unité", widget: string }
+              - { name: libelle, label: "Libellé", widget: string }
+
+          - name: sections
+            label: "Sections de la page"
+            label_singular: "Section"
+            widget: list
+            summary: "{{fields.titre}}"
+            hint: "Faites glisser une section pour la déplacer. Chaque section contient des blocs."
+            fields:
+              - { name: id, label: "Ancre (lien #)", widget: string, required: false }
+              - name: fond
+                label: "Fond"
+                widget: select
+                default: clair
+                options: [{ label: "Blanc", value: clair }, { label: "Gris clair", value: gris }, { label: "Sombre", value: sombre }]
+              - { name: kicker, label: "Petite phrase rouge", widget: string, required: false }
+              - { name: titre, label: "Titre de section", widget: string, required: false }
+              - { name: chapo, label: "Chapô", widget: text, required: false }
+              - { name: texte, label: "Paragraphe simple", widget: text, required: false }
+              - name: contenu
+                label: "Blocs"
+                label_singular: "Bloc"
+                widget: list
+                types:
+
+                  - name: texte
+                    label: "Texte"
+                    summary: "Texte — {{fields.titre}}"
+                    fields:
+                      - { name: titre, label: "Sous-titre", widget: string, required: false }
+                      - { name: paragraphes, label: "Paragraphes", widget: list, field: { name: p, label: "Paragraphe", widget: text } }
+                      - { name: puces, label: "Puces", widget: list, required: false, field: { name: p, label: "Puce", widget: string } }
+                      - { name: puces_orange, label: "Puces oranges", widget: boolean, required: false, default: false }
+
+                  - name: texte_photo
+                    label: "Texte + photo"
+                    summary: "Texte + photo — {{fields.titre}}"
+                    fields:
+                      - name: photo_a
+                        label: "Photo à"
+                        widget: select
+                        default: gauche
+                        options: [{ label: "Gauche", value: gauche }, { label: "Droite", value: droite }]
+                      - { name: image, label: "Photo", widget: image }
+                      - { name: alt, label: "Description de la photo", widget: string, hint: "Lue par Google et par les lecteurs d'écran" }
+                      - name: format
+                        label: "Format"
+                        widget: select
+                        default: "4/3"
+                        options: ["4/3", "16/9", "3/2"]
+                      - { name: detouree, label: "Photo détourée (fond blanc)", widget: boolean, required: false, default: false }
+                      - { name: haut, label: "Aligner en haut", widget: boolean, required: false, default: false }
+                      - { name: titre, label: "Sous-titre", widget: string, required: false }
+                      - { name: paragraphes, label: "Paragraphes", widget: list, required: false, field: { name: p, label: "Paragraphe", widget: text } }
+                      - { name: puces, label: "Puces", widget: list, required: false, field: { name: p, label: "Puce", widget: string } }
+                      - { name: puces_orange, label: "Puces oranges", widget: boolean, required: false, default: false }
+
+                  - name: photos
+                    label: "Rangée de photos"
+                    summary: "Rangée de photos"
+                    fields:
+                      - { name: colonnes, label: "Nombre par ligne", widget: number, default: 3, value_type: int, min: 2, max: 4 }
+                      - name: style
+                        label: "Style"
+                        widget: select
+                        required: false
+                        default: normal
+                        options: [{ label: "Normal", value: normal }, { label: "Coloris (fond blanc)", value: coloris }]
+                      - name: photos
+                        label: "Photos"
+                        label_singular: "Photo"
+                        widget: list
+                        summary: "{{fields.legende}}"
+                        fields:
+                          - { name: image, label: "Photo", widget: image }
+                          - { name: alt, label: "Description", widget: string }
+                          - { name: legende, label: "Légende affichée", widget: string, required: false }
+                          - { name: detouree, label: "Photo détourée", widget: boolean, required: false, default: false }
+
+                  - name: bandeau
+                    label: "Grande photo pleine largeur"
+                    summary: "Bandeau — {{fields.legende}}"
+                    fields:
+                      - { name: image, label: "Photo", widget: image }
+                      - { name: alt, label: "Description", widget: string }
+                      - { name: legende, label: "Légende sous la photo", widget: text, required: false }
+
+                  - name: photo_centree
+                    label: "Photo verticale centrée"
+                    summary: "Photo centrée — {{fields.legende}}"
+                    fields:
+                      - { name: image, label: "Photo", widget: image }
+                      - { name: alt, label: "Description", widget: string }
+                      - { name: legende, label: "Légende", widget: string, required: false }
+
+                  - name: deux_photos
+                    label: "Deux photos côte à côte"
+                    summary: "Deux photos"
+                    fields:
+                      - name: photos
+                        label: "Photos"
+                        widget: list
+                        max: 2
+                        fields:
+                          - { name: image, label: "Photo", widget: image }
+                          - { name: alt, label: "Description", widget: string }
+
+                  - name: etapes
+                    label: "Étapes numérotées"
+                    summary: "Étapes numérotées"
+                    fields:
+                      - name: etapes
+                        label: "Étapes"
+                        label_singular: "Étape"
+                        widget: list
+                        summary: "{{fields.titre}}"
+                        fields:
+                          - { name: titre, label: "Titre", widget: string }
+                          - { name: texte, label: "Texte", widget: text }
+
+                  - name: boutons
+                    label: "Boutons"
+                    summary: "Boutons"
+                    fields:
+                      - name: boutons
+                        label: "Boutons"
+                        label_singular: "Bouton"
+                        widget: list
+                        summary: "{{fields.texte}}"
+                        fields:
+                          - { name: texte, label: "Texte", widget: string }
+                          - { name: lien, label: "Lien", widget: string }
+                          - name: style
+                            label: "Style"
+                            widget: select
+                            default: ""
+                            options:
+                              - { label: "Plein rouge", value: "" }
+                              - { label: "Contour", value: ghost }
+                              - { label: "Blanc (sur fond sombre)", value: white }
+                              - { label: "Contour clair (sur fond sombre)", value: outlight }
+
+                  - name: note
+                    label: "Note discrète"
+                    summary: "Note"
+                    fields:
+                      - { name: texte, label: "Texte", widget: text }
+
+                  - name: villes
+                    label: "Liste de villes"
+                    summary: "Villes livrées"
+                    fields:
+                      - { name: villes, label: "Villes", widget: list, field: { name: v, label: "Ville", widget: string } }
+
+                  - name: tableau
+                    label: "Tableau comparatif"
+                    summary: "Comparatif"
+                    fields:
+                      - { name: legende, label: "Légende au-dessus du tableau", widget: string }
+                      - name: lignes
+                        label: "Lignes"
+                        label_singular: "Modèle"
+                        widget: list
+                        summary: "{{fields.modele}} — {{fields.prix}}"
+                        fields:
+                          - { name: modele, label: "Modèle", widget: string }
+                          - { name: prix, label: "Prix TTC", widget: string }
+                          - { name: ptac, label: "PTAC", widget: string }
+                          - { name: charge, label: "Charge utile", widget: string }
+                          - { name: sans_rampe, label: "Sans rampe", widget: string }
+                          - { name: vertical, label: "Rangement vertical", widget: string }
+                          - { name: nous, label: "C'est notre modèle (ligne en rouge)", widget: boolean, required: false, default: false }
+
+                  - name: fiche_technique
+                    label: "Fiche technique"
+                    summary: "Fiche technique"
+                    fields:
+                      - name: lignes
+                        label: "Caractéristiques"
+                        label_singular: "Caractéristique"
+                        widget: list
+                        summary: "{{fields.libelle}} : {{fields.valeur}}"
+                        fields:
+                          - { name: libelle, label: "Libellé", widget: string }
+                          - { name: valeur, label: "Valeur", widget: string }
+                      - name: sous_blocs
+                        label: "Encadrés à droite"
+                        label_singular: "Encadré"
+                        widget: list
+                        summary: "{{fields.titre}}"
+                        fields:
+                          - { name: titre, label: "Titre", widget: string }
+                          - { name: texte, label: "Texte", widget: text }
+                          - { name: image, label: "Photo", widget: image }
+                          - { name: alt, label: "Description de la photo", widget: string }
+                          - { name: detouree, label: "Photo détourée", widget: boolean, required: false, default: false }
+
+                  - name: bloc_prix
+                    label: "Encadré prix"
+                    summary: "Encadré prix"
+                    fields:
+                      - { name: sous_prix, label: "Ligne sous le prix", widget: string }
+                      - { name: ligne_livraison, label: "Libellé de la livraison", widget: string }
+                      - { name: inclus, label: "Ce qui est compris", widget: list, field: { name: p, label: "Ligne", widget: string } }
+                      - { name: options, label: "Options", widget: list, field: { name: p, label: "Option", widget: string } }
+                      - name: colonne
+                        label: "Colonne de droite"
+                        label_singular: "Paragraphe"
+                        widget: list
+                        summary: "{{fields.titre}}"
+                        fields:
+                          - { name: titre, label: "Titre", widget: string }
+                          - { name: texte, label: "Texte", widget: text }
+                          - { name: agences, label: "Afficher les trois agences ici", widget: boolean, required: false, default: false }
+
+                  - name: piliers
+                    label: "Les cinq promesses"
+                    summary: "Les cinq promesses"
+                    fields:
+                      - { name: vide, label: "Rien à régler ici", widget: hidden, required: false }
+
+                  - name: nuancier
+                    label: "Pastilles de coloris"
+                    summary: "Pastilles de coloris"
+                    fields:
+                      - { name: vide, label: "Rien à régler ici", widget: hidden, required: false }
+
+                  - name: faq
+                    label: "Questions fréquentes"
+                    summary: "Questions fréquentes"
+                    fields:
+                      - { name: vide, label: "Rien à régler ici", widget: hidden, required: false }
+
+                  - name: schema
+                    label: "Schéma animé du mécanisme"
+                    summary: "Schéma animé"
+                    fields:
+                      - { name: titre, label: "Sous-titre", widget: string }
+                      - { name: texte, label: "Texte", widget: text }
+                      - { name: image, label: "Photo à côté", widget: image }
+                      - { name: alt, label: "Description de la photo", widget: string }
+                      - { name: detouree, label: "Photo détourée", widget: boolean, required: false, default: true }
+
+      - name: galerie
+        label: "Galerie"
+        file: "content/galerie.yml"
+        fields:
+          - name: meta
+            label: "Référencement de la page"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre dans Google", widget: string }
+              - { name: description, label: "Description dans Google", widget: text }
+          - { name: kicker, label: "Petite phrase rouge", widget: string }
+          - { name: titre, label: "Titre", widget: string }
+          - { name: chapo, label: "Chapô", widget: text }
+          - { name: kicker_video, label: "Phrase rouge — vidéo", widget: string }
+          - { name: titre_video, label: "Titre — vidéo", widget: string }
+          - { name: kicker_produit, label: "Phrase rouge — produit", widget: string }
+          - { name: titre_produit, label: "Titre — produit", widget: string }
+          - { name: kicker_options, label: "Phrase rouge — options", widget: string }
+          - { name: titre_options, label: "Titre — options", widget: string }
+          - { name: chapo_options, label: "Chapô — options", widget: text }
+          - name: photos
+            label: "Photos"
+            label_singular: "Photo"
+            widget: list
+            summary: "{{fields.legende}}"
+            fields:
+              - { name: image, label: "Photo", widget: image }
+              - { name: alt, label: "Description (lue par Google)", widget: string }
+              - { name: legende, label: "Légende affichée", widget: string }
+              - { name: grande, label: "Haute définition disponible", widget: boolean, required: false, default: true }
+          - name: options
+            label: "Photos d'accessoires"
+            label_singular: "Accessoire"
+            widget: list
+            summary: "{{fields.legende}}"
+            fields:
+              - { name: image, label: "Photo", widget: image }
+              - { name: alt, label: "Description", widget: string }
+              - { name: legende, label: "Légende", widget: string }
+
+      - name: conseils
+        label: "Page Conseils"
+        file: "content/conseils.yml"
+        fields:
+          - name: meta
+            label: "Référencement de la page"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre dans Google", widget: string }
+              - { name: description, label: "Description dans Google", widget: text }
+          - { name: kicker, label: "Petite phrase rouge", widget: string }
+          - { name: titre, label: "Titre", widget: string }
+          - { name: chapo, label: "Chapô", widget: text }
+
+      - name: faq
+        label: "Questions fréquentes"
+        file: "content/faq.yml"
+        fields:
+          - name: questions
+            label: "Questions"
+            label_singular: "Question"
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { name: question, label: "Question", widget: string }
+              - { name: reponse, label: "Réponse", widget: text, hint: "{prix} et {livraison} affichent les montants à jour" }
+
+      - name: piliers
+        label: "Les cinq promesses"
+        file: "content/piliers.yml"
+        fields:
+          - name: piliers
+            label: "Promesses"
+            label_singular: "Promesse"
+            widget: list
+            summary: "{{fields.nom}}"
+            fields:
+              - { name: nom, label: "Nom", widget: string }
+              - { name: sous_titre, label: "Sous-titre", widget: string }
+              - { name: icone, label: "Dessin (ne pas modifier sans savoir)", widget: text }
+
+  # -------------------------------------------------------------------------
+  - name: articles
+    label: "Conseils et guides"
+    label_singular: "Article"
+    description: "Chaque article est une page de plus sur laquelle Google peut vous trouver."
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
+    summary: "{{titre}}"
+    sortable_fields: [date, titre]
+    fields:
+      - { name: titre, label: "Titre de l'article", widget: string }
+      - { name: description, label: "Description dans Google", widget: text, hint: "155 caractères maximum" }
+      - { name: resume, label: "Résumé affiché en haut et dans la liste", widget: text }
+      - { name: date, label: "Date", widget: datetime, date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
+      - { name: image, label: "Photo de l'article", widget: image, required: false }
+      - { name: alt, label: "Description de la photo", widget: string, required: false }
+      - { name: publie, label: "Publié", widget: boolean, default: true }
+      - { name: body, label: "Contenu", widget: markdown }

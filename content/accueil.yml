@@ -1,0 +1,313 @@
+meta:
+  titre: "Remorque porte-moto abaissable et pliable | SMART BIKER France"
+  description: "Remorque porte-moto abaissable et pliable : chargez votre moto seul, sans rampe. Rangement vertical sur 2 m, 325 kg de charge utile. À partir de {prix} € TTC, livrée montée."
+
+hero:
+  kicker: "Importateur exclusif France"
+  titre: "La remorque porte-moto *abaissable*. Chargez votre moto seul, sans rampe."
+  intro: "Le plateau se pose au sol, vous poussez la moto dans le bloque-roue, vous relevez et vous verrouillez. Pliée, elle se range debout sur 2 mètres. **À partir de {prix} € TTC, livrée déjà montée.**"
+  bouton: "Demander un devis"
+  bouton_lien: "devis.html"
+  bouton2: "Voir le fonctionnement"
+  bouton2_lien: "#chargement"
+  bouton_film: "Voir le film complet"
+  bouton_film_duree: "32 s, avec le son"
+  note: "Retrait à Limoges, La Souterraine ou Angoulême · Livraison partout en France métropolitaine"
+
+chiffres:
+  - valeur: "450"
+    unite: "kg"
+    libelle: "PTAC"
+  - valeur: "325"
+    unite: "kg"
+    libelle: "Charge utile"
+  - valeur: "1650"
+    unite: "mm"
+    libelle: "Empattement max"
+  - valeur: "2"
+    unite: "m"
+    libelle: "Rangement vertical"
+
+sections:
+
+  - id: "piliers"
+    fond: clair
+    kicker: "Plus besoin de rampes, plus besoin d'aide"
+    titre: "Tout est intégré"
+    chapo: "Cinq promesses, qui tiennent dans un mécanisme : le plateau vient chercher la moto au sol, puis la remorque se plie et disparaît dans un coin de garage."
+    contenu:
+      - type: piliers
+
+  - id: "chargement"
+    fond: gris
+    kicker: "Le chargement"
+    titre: "Comment charger sa moto seul sur une remorque abaissable"
+    chapo: "Charger une moto sur une remorque classique demande une rampe, de l'élan et souvent une deuxième personne. C'est le moment où l'on abîme une carrosserie ou où l'on se fait mal au dos. La remorque porte-moto abaissable supprime cette étape&#8239;: le plateau vient chercher la moto au sol."
+    contenu:
+      - type: etapes
+        etapes:
+          - titre: "La remorque se pose au sol"
+            texte: "Vous déverrouillez le mécanisme et le plateau descend jusqu'au sol, sans effort. Aucune rampe à sortir, à transporter ni à ranger : le système d'abaissement et de levage est intégré."
+          - titre: "Votre moto dans le bloque-roue avant"
+            texte: "Vous poussez la moto à la main sur le plateau et vous calez la roue avant. Elle tient debout seule, vous avez les mains libres pour sangler."
+          - titre: "Relevez sans effort et verrouillez"
+            texte: "Vous relevez le plateau et vous verrouillez. Les dix points d'arrimage reçoivent les sangles. Prêt à partir, seul, en moins de cinq minutes."
+
+      - type: photos
+        colonnes: 3
+        photos:
+          - image: "assets/img/smart-biker-noire-plateau-au-sol.jpg"
+            alt: "Remorque porte-moto SMART BIKER noire, plateau abaissé au sol, sur fond blanc"
+            legende: "1 · Plateau au sol"
+            detouree: true
+          - image: "assets/img/smart-biker-blanche-plateau-abaisse.jpg"
+            alt: "Remorque porte-moto SMART BIKER blanche avec son bloque-roue avant, sur fond blanc"
+            legende: "2 · Le bloque-roue"
+            detouree: true
+          - image: "assets/img/smart-biker-noire-trois-quarts.jpg"
+            alt: "Remorque porte-moto SMART BIKER noire, plateau relevé et verrouillé, sur fond blanc"
+            legende: "3 · Relevée, verrouillée"
+            detouree: true
+
+      - type: bandeau
+        image: "assets/img/bloque-roue-avant-moto-remorque.jpg"
+        alt: "Roue avant d'une BMW GS calée dans le bloque-roue de la remorque SMART BIKER"
+        legende: "La roue avant vient se caler seule dans le bloque-roue&#8239;: la moto tient debout, vous avez les mains libres pour sangler."
+
+      - type: texte_photo
+        photo_a: gauche
+        image: "assets/img/charger-sa-moto-seul-remorque-abaissee.jpg"
+        alt: "Un homme charge seul un BMW GS sur la remorque porte-moto SMART BIKER abaissée au sol"
+        format: "16/9"
+        titre: "Sans rampe, sans aide, sans se faire mal"
+        paragraphes:
+          - "Le problème d'une rampe n'est pas seulement son encombrement, c'est son angle&#8239;: plus elle est courte, plus la pente est raide, et plus la moto risque de vous échapper. Sur une remorque abaissable, la pente n'existe pas — le plateau est au niveau du sol."
+          - "C'est ce qui rend le produit utilisable par une seule personne, quel que soit le poids de la machine&#8239;: un trail chargé, un custom ou un GT de 300 kg se montent de la même façon."
+        puces:
+          - "Aucune rampe à transporter ni à ranger"
+          - "Chargement par une seule personne"
+          - "Bloque-roue avant intégré, la moto tient seule"
+          - "Dix points d'arrimage répartis sur le plateau"
+
+      - type: schema
+        titre: "Trois positions, un seul mécanisme"
+        texte: "Le même système d'abaissement et de levage sert au chargement, au transport et au rangement. Rien à démonter, rien à ajouter, aucun outil."
+        image: "assets/img/smart-biker-noire-profil.jpg"
+        alt: "Remorque porte-moto SMART BIKER noire vue de profil, sur fond blanc"
+        detouree: true
+
+  - id: "rangement"
+    fond: clair
+    kicker: "Ultra compact"
+    titre: "Remorque pliable&#8239;: le rangement vertical sur 2 mètres"
+    chapo: "La deuxième raison pour laquelle on renonce à une remorque, c'est la place qu'elle prend le reste de l'année. Une remorque porte-moto classique occupe 5 à 6 m² en permanence — souvent la place de la voiture."
+    contenu:
+      - type: texte_photo
+        photo_a: droite
+        haut: true
+        image: "assets/img/smart-biker-blanche-pliee.jpg"
+        alt: "Remorque porte-moto SMART BIKER blanche pliée, prête à être dressée, sur fond blanc"
+        detouree: true
+        paragraphes:
+          - "La SMART BIKER se plie et se dresse à la verticale. Emprise au sol&#8239;: environ 1 m², pour 2 mètres de haut. Elle tient contre un mur de garage, dans un box ou sous un auvent, sans démontage et sans outil."
+        puces_orange: true
+        puces:
+          - "**Aucun démontage** — le pliage fait partie du mécanisme"
+          - "**Une seule personne** suffit à la basculer à la verticale"
+          - "**2 m de hauteur**, compatible avec une porte de garage standard"
+          - "**1 m² au sol** au lieu de 5 à 6 m² pour une remorque conventionnelle"
+
+      - type: photo_centree
+        image: "assets/img/remorque-porte-moto-pliee-rangement-vertical.jpg"
+        alt: "Remorque porte-moto SMART BIKER pliée et dressée à la verticale contre un mur"
+        legende: "Dressée contre un mur&#8239;: 2 m de haut, environ 1 m&#178; au sol."
+
+  - id: "coloris"
+    fond: gris
+    kicker: "Totalement personnalisable"
+    titre: "Quatre coloris au choix"
+    chapo: "Blanc, noir, orange ou bleu, pour assortir la remorque à votre moto ou à votre véhicule tracteur. Jantes acier ou aluminium."
+    contenu:
+      - type: nuancier
+      - type: photos
+        style: coloris
+        colonnes: 4
+        photos:
+          - image: "assets/img/smart-biker-coloris-blanc-studio.jpg"
+            alt: "Remorque porte-moto abaissable SMART BIKER blanche sur fond blanc"
+            legende: "Blanc"
+            detouree: true
+          - image: "assets/img/smart-biker-coloris-noir-studio.jpg"
+            alt: "Remorque porte-moto abaissable SMART BIKER noire sur fond blanc"
+            legende: "Noir"
+            detouree: true
+          - image: "assets/img/smart-biker-coloris-orange-studio.jpg"
+            alt: "Remorque porte-moto abaissable SMART BIKER orange sur fond blanc"
+            legende: "Orange"
+            detouree: true
+          - image: "assets/img/smart-biker-coloris-bleu-studio.jpg"
+            alt: "Remorque porte-moto abaissable SMART BIKER bleue sur fond blanc"
+            legende: "Bleu"
+            detouree: true
+      - type: note
+        texte: "La teinte est appliquée sur le châssis galvanisé, en atelier, avant livraison. Jantes acier de série, jantes aluminium en option."
+      - type: boutons
+        boutons:
+          - texte: "Voir toute la galerie"
+            lien: "galerie.html"
+            style: ghost
+
+  - id: "technique"
+    fond: clair
+    kicker: "Fiche technique"
+    titre: "Caractéristiques de la remorque porte-moto SMART BIKER"
+    contenu:
+      - type: fiche_technique
+        lignes:
+          - libelle: "Système d'abaissement et de levage"
+            valeur: "Intégré"
+          - libelle: "Poids total autorisé en charge (PTAC)"
+            valeur: "450 kg"
+          - libelle: "Charge utile"
+            valeur: "325 kg"
+          - libelle: "Empattement maximum de la moto"
+            valeur: "1 650 mm"
+          - libelle: "Dimensions hors tout"
+            valeur: "248 × 188 × 60 cm"
+          - libelle: "Hauteur une fois rangée verticalement"
+            valeur: "2 m"
+          - libelle: "Roues"
+            valeur: "195/55 R10C"
+          - libelle: "Jantes"
+            valeur: "Acier ou aluminium"
+          - libelle: "Points d'arrimage"
+            valeur: "10"
+          - libelle: "Permis requis"
+            valeur: "Permis B"
+          - libelle: "Carte grise"
+            valeur: "Fournie"
+        sous_blocs:
+          - titre: "Quelles motos peut-on transporter&#8239;?"
+            texte: "Toutes les motos jusqu'à 1 650 mm d'empattement et 325 kg de charge utile, ce qui couvre la quasi-totalité du parc&#8239;: roadsters, trails, sportives, customs, gros GT équipés de valises."
+            image: "assets/img/smart-biker-noire-vue-arriere.jpg"
+            alt: "Remorque porte-moto SMART BIKER noire vue de l'arrière, plateau et feux, sur fond blanc"
+            detouree: true
+          - titre: "Le kit MP3 pour les scooters 3 roues"
+            texte: "En option, le kit MP3 permet de transporter un scooter à trois roues — un cas que la plupart des remorques porte-moto ne traitent pas."
+            image: "assets/img/remorque-porte-moto-scooter-3-roues-kit-mp3.jpg"
+            alt: "Scooter à trois roues transporté sur la remorque SMART BIKER équipée du kit MP3"
+            detouree: false
+
+  - id: "comparatif"
+    fond: gris
+    kicker: "Le marché français"
+    titre: "Comparatif des remorques porte-moto abaissables"
+    chapo: "Une remorque porte-moto abaissable coûte entre 2 000 et 2 900 € en France. Voici ce que proposent les principaux modèles disponibles, relevé sur les tarifs publics de leurs distributeurs."
+    contenu:
+      - type: tableau
+        legende: "Modèles disponibles en France · tarifs TTC constatés"
+        lignes:
+          - modele: "SMART BIKER"
+            prix: "{prix} €"
+            ptac: "450 kg"
+            charge: "325 kg"
+            sans_rampe: "Oui"
+            vertical: "Oui"
+            nous: true
+          - modele: "Debon Roadster"
+            prix: "2 094 €"
+            ptac: "750 kg"
+            charge: "570 kg"
+            sans_rampe: "Non"
+            vertical: "Non"
+          - modele: "For-One"
+            prix: "2 280 €"
+            ptac: "400 kg"
+            charge: "330 kg"
+            sans_rampe: "Oui"
+            vertical: "Partiel"
+          - modele: "Remorques Tournier"
+            prix: "2 390 €"
+            ptac: "—"
+            charge: "—"
+            sans_rampe: "Oui"
+            vertical: "Oui"
+          - modele: "Remorque Center"
+            prix: "2 790 €"
+            ptac: "—"
+            charge: "—"
+            sans_rampe: "Treuil"
+            vertical: "Non"
+          - modele: "Cochet UNO"
+            prix: "2 850 €"
+            ptac: "500–600 kg"
+            charge: "331–431 kg"
+            sans_rampe: "Oui"
+            vertical: "Non"
+
+  - id: "prix"
+    fond: clair
+    kicker: "Tarif"
+    titre: "Prix et options"
+    contenu:
+      - type: bloc_prix
+        sous_prix: "Retrait dans l'une de nos trois agences · Carte grise fournie"
+        ligne_livraison: "Livraison chez vous, France métropolitaine"
+        inclus:
+          - "Remorque complète et homologuée, **livrée déjà montée**"
+          - "Système d'abaissement et de levage intégré"
+          - "Bloque-roue avant et dix points d'arrimage"
+          - "Carte grise fournie, prête à rouler"
+          - "Garantie constructeur et pièces détachées disponibles"
+        options:
+          - "Kit MP3"
+          - "Jantes aluminium"
+          - "Kit antivol"
+          - "Sangles rétractables"
+          - "Roue de secours"
+          - "Coloris au choix"
+        colonne:
+          - titre: "Trois agences de retrait"
+            texte: "Vous pouvez venir chercher votre remorque dans l'une de nos agences, au prix de {prix} € TTC."
+            agences: true
+          - titre: "Ou livrée chez vous"
+            texte: "Pour {livraison} € TTC, nous livrons partout en France métropolitaine, à votre domicile ou sur votre lieu de travail, sur rendez-vous. La remorque arrive **déjà montée**, carte grise prête."
+          - titre: "Professionnels"
+            texte: "Concessions moto, loueurs, circuits et écoles de pilotage&#8239;: conditions dédiées à partir de deux remorques. Précisez-le dans votre demande de devis."
+
+  - id: "livraison"
+    fond: gris
+    kicker: "Partout en France"
+    titre: "Livraison chez vous, déjà montée"
+    chapo: "Nous livrons dans toute la France métropolitaine pour {livraison} € TTC. Vous n'avez rien à assembler&#8239;: la remorque arrive prête à atteler."
+    contenu:
+      - type: deux_photos
+        photos:
+          - image: "assets/img/remorque-porte-moto-attelee-sur-route.jpg"
+            alt: "Remorque porte-moto SMART BIKER attelée, chargée d'un roadster BMW, sur la route"
+          - image: "assets/img/convoi-remorques-porte-moto-livraison.jpg"
+            alt: "Deux voitures tractant des remorques porte-moto SMART BIKER chargées de motos"
+      - type: villes
+        villes: ["Lyon","Bordeaux","Toulouse","Nantes","Marseille","Paris","Lille","Clermont-Ferrand","Poitiers","Limoges","Angoulême","La Souterraine"]
+
+  - id: "faq"
+    fond: clair
+    kicker: "Questions fréquentes"
+    titre: "Tout ce qu'on nous demande avant d'acheter"
+    contenu:
+      - type: faq
+
+  - id: "devis"
+    fond: sombre
+    kicker: "Devis gratuit"
+    titre: "Votre remorque porte-moto, prête à partir"
+    texte: "Réponse sous 24 heures ouvrées. Dites-nous votre moto et votre département, nous vous indiquons le prix final, options comprises, et le délai."
+    contenu:
+      - type: boutons
+        boutons:
+          - texte: "Remplir la demande de devis"
+            lien: "devis.html"
+            style: white
+          - texte: "Appeler le {tel}"
+            lien: "tel:{tel_lien}"
+            style: outlight

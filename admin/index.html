@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Administration — SMART BIKER France</title>
+<link rel="icon" href="../assets/img/logo-smart-biker.svg" type="image/svg+xml">
+<style>
+  :root{ --red:#e63935; --ink:#12100b; }
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  #loading{position:fixed;inset:0;display:grid;place-items:center;background:#fff;z-index:9}
+  #loading p{font-size:14px;color:#67768e}
+  .nc-appHeader-container{background:var(--ink)}
+  .nc-appHeader-button,.nc-appHeader-navLink{color:#fff}
+</style>
+</head>
+<body>
+<div id="loading"><p>Chargement de l'espace d'administration…</p></div>
+
+<!-- Decap CMS. Version figée : une mise à jour ne peut pas casser le site sans qu'on le décide. -->
+<script src="https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    var l = document.getElementById("loading");
+    if (l) setTimeout(function(){ l.style.display = "none"; }, 1200);
+  });
+</script>
+</body>
+</html>

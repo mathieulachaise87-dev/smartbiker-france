@@ -1,0 +1,79 @@
+# Publication sur l'adresse de test GitHub Pages.
+#
+# À placer dans le dépôt sous :  .github/workflows/pages.yml
+#
+# Il se déclenche à chaque modification publiée depuis /admin :
+# il régénère les pages à partir du dossier content/, puis met le site en ligne.
+#
+# Rien à configurer : il faut seulement avoir choisi « GitHub Actions »
+# dans Settings › Pages du dépôt.
+
+name: Publier sur l'adresse de test
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install --quiet pyyaml markdown pillow
+
+      - name: Générer les pages
+        run: python build.py
+
+      - name: Enregistrer les images fabriquées
+        run: |
+          if [ -n "$(git status --porcelain assets/img)" ]; then
+            git config user.name "Publication automatique"
+            git config user.email "noreply@smartbiker-france.fr"
+            git add assets/img
+            git commit -m "Versions optimisées des photos ajoutées"
+            git push
+          fi
+
+      - name: Assembler le site
+        run: |
+          mkdir -p _site
+          cp *.html robots.txt sitemap.xml _site/
+          cp -r assets admin _site/
+          echo "Fichiers prêts : $(find _site -type f | wc -l)"
+
+      - name: Préparer l'envoi
+        uses: actions/configure-pages@v5
+
+      - name: Téléverser
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  mettre_en_ligne:
+    needs: construire
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - name: Mettre en ligne
+        id: deploiement
+        uses: actions/deploy-pages@v4
